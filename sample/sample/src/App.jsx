@@ -12,7 +12,7 @@ import Profile from './components/Profilepage';
 import Stats from './components/Stats';
 import 'aos/dist/aos.css';
 import AOS from 'aos';
-import Adminpage from './components/adminpage';
+import Adminpage from './components/Adminpage';
 import Userlist from './components/userlist';
 import ProductList from './components/productlist';
 import Navbar from './components/Navbar';
