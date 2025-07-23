@@ -6,7 +6,7 @@ import Home from './components/Home';
 import Loginpage from './components/login';
 import Createacc from './components/createaccount';
 import ForgetPassword from './components/Forgetpassword';
-import Verifyotp from './components/verifyotp';
+import Verifyotp from './components/VerifyOtp';
 import NewPassword from './components/Newpassword';
 import Profile from './components/Profilepage';
 import Stats from './components/Stats';
