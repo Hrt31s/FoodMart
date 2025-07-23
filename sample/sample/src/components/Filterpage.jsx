@@ -55,7 +55,7 @@ const FilterPage = () => {
     const fetchFilteredProducts = async () => {
       try {
         const response = await fetch(
-          `/api/user/products?category=${encodeURIComponent(category)}`
+          `/api/product/products?category=${encodeURIComponent(category)}`
         );
         const data = await response.json();
         setProducts(data);
@@ -88,7 +88,7 @@ const FilterPage = () => {
     try {
       const quantity = 1;
       await axios.post(
-        "/api/user/addtocart",
+        "/api/product/addtocart",
         { productId: product._id, quantity },
         {
           headers: {

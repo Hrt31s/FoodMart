@@ -23,7 +23,7 @@ export default function AddProduct() {
     form.append("rating", rating); 
 
     try {
-      const response = await axios.post("/api/user/add", form);
+      const response = await axios.post("/api/product/add", form);
       if (response.status === 201) {
         setName("");
         setPrice("");

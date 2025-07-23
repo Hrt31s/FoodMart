@@ -14,7 +14,7 @@ export default function ProductList() {
   const fetchProducts = async (pageNumber = 1) => {
     setLoading(true);
     try {
-      const res = await axios.get(`/api/user/allproducts?page=${pageNumber}&limit=${limit}`);
+      const res = await axios.get(`/api/product/allproducts?page=${pageNumber}&limit=${limit}`);
       setProducts(Array.isArray(res.data.data) ? res.data.data : []);
       setPage(res.data.page);
       setTotalPages(res.data.totalPages);
@@ -34,7 +34,7 @@ export default function ProductList() {
 
     try {
       const token = localStorage.getItem("token");
-      await axios.delete(`/api/user/deleteproduct/${id}`, {
+      await axios.delete(`/api/product/deleteproduct/${id}`, {
         headers: { Authorization: `Bearer ${token}` },
       });
       alert("Product deleted successfully");
@@ -56,7 +56,7 @@ export default function ProductList() {
       const { _id, name, category, price } = editProduct;
 
       await axios.put(
-        `/api/user/updateproduct/${_id}`,
+        `/api/product/updateproduct/${_id}`,
         { name, category, price },
         { headers: { Authorization: `Bearer ${token}` } }
       );

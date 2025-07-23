@@ -32,7 +32,7 @@ router.delete(
       res.status(400).send({ success: false, message: "Token Not Found" });
     }
     if (token) {
-      let decoded = await jwt.verify(token,process.env.SECRET_KEY);
+      let decoded = await jwt.verify(token, process.env.SECRET_KEY);
       console.log(decoded);
       req.headers.id = decoded.id;
     }
@@ -40,20 +40,18 @@ router.delete(
   },
   deleteuserController
 );
-router.get('/profile', verifyToken, getProfileController);
+router.get("/profile", verifyToken, getProfileController);
 
 // forget password apis
-router.post("/forgot-password", forgotpassword)
-router.post("/verify-otp", verifyOtp)
-router.post("/newpassword", newPassword)
-router.post("/reset-password", resetPassword)
+router.post("/forgot-password", forgotpassword);
+router.post("/verify-otp", verifyOtp);
+router.post("/newpassword", newPassword);
+router.post("/reset-password", resetPassword);
 
-
-
-router.get("/newpassword",(req,res)=>{
+router.get("/newpassword", (req, res) => {
   let filepath = path.join(__dirname, "../newpassword.html");
-  let file = fs .readFileSync(filepath, "utf-8");
+  let file = fs.readFileSync(filepath, "utf-8");
   res.send(file);
-})
+});
 
 module.exports = router;

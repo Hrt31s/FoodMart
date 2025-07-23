@@ -21,8 +21,8 @@ const port = process.env.PORT || 4499;
 connectDb();
 
 app.use("/api/user/", userRoute);
-app.use("/api/user",  productRoute);
-app.use("/api/user" ,adminroute);
+app.use("/api/product/",  productRoute);
+app.use("/api/admin/" ,adminroute);
 
 app.use((err, req, res, next) => {
   console.log(err);
@@ -31,8 +31,7 @@ app.use((err, req, res, next) => {
   .send({ success: false, message: err.message || "Route not found" });
 });
 app.use(express.static(path.join(__dirname, "../sample/sample/dist")));
- let g = path.resolve(__dirname, "../sample/sample/dist/index.html")
-console.log(g)
+
 app.get("*", (req, res) => {
   res.sendFile(path.resolve(__dirname, "../sample/sample/dist/index.html"));
 });

@@ -88,7 +88,7 @@ export default function Newarrived() {
 
   const fetchProducts = async () => {
     try {
-      const res = await axios.get(`/api/user/allproducts?page=${page}&limit=${limit}`);
+      const res = await axios.get(`/api/product/allproducts?page=${page}&limit=${limit}`);
       setProducts(res.data.data || []);
       setTotalPages(res.data.totalPages || 1);
     } catch (error) {
@@ -113,7 +113,7 @@ export default function Newarrived() {
     try {
       const quantity = 1;
       await axios.post(
-        "/api/user/addtocart",
+        "/api/product/addtocart",
         { productId: product._id, quantity },
         {
           headers: {

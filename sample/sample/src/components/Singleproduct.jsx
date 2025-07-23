@@ -12,7 +12,7 @@ const SingleProduct = () => {
   useEffect(() => {
     const fetchProduct = async () => {
       try {
-        const res = await axios.get(`/api/user/singleproduct/${id}`);
+        const res = await axios.get(`/api/product/singleproduct/${id}`);
         setProduct(res.data.data);
       } catch (err) {
         console.error("Error fetching product:", err);
@@ -44,7 +44,7 @@ const SingleProduct = () => {
       const quantity = 1;
 
       await axios.post(
-        "/api/user/addtocart",
+        "/api/product/addtocart",
         { productId: product._id, quantity },
         {
           headers: {

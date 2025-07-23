@@ -3,6 +3,7 @@ import axios from "axios";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
 import { Link } from "react-router-dom"; // added for routing
+import toast from "react-hot-toast"; 
 
 import "swiper/css";
 import "swiper/css/navigation";
@@ -16,9 +17,9 @@ export default function Justarrived() {
   useEffect(() => {
     const fetchNewArrivals = async () => {
       try {
-        const response = await axios.get("/api/user/reverseproducts");
+        const response = await axios.get("/api/product/reverseproducts");
         const arrived = response.data?.data || [];
-        setProducts(arrived.reverse());  console.log(arrived,"reverse")
+        setProducts(arrived.reverse()); 
       } catch (error) {
         console.error("Error fetching just arrived products:", error);
       }
@@ -36,14 +37,14 @@ export default function Justarrived() {
   const handleAddToCart = async (product) => {
     const token = localStorage.getItem("token");
     if (!token) {
-      alert("Please log in to add items to your cart.");
+     toast.error("please login to add  items to your cart ")
       return;
     }
 
     try {
       const quantity = 1;
       await axios.post(
-        "/api/user/addtocart",
+        "/api/product/addtocart",
         { productId: product._id, quantity },
         {
           headers: {

@@ -10,15 +10,21 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@reduxjs/toolkit": "^2.7.0",
+    "@tailwindcss/vite": "^4.1.4",
     "aos": "^2.3.4",
-    "awesome": "^0.0.7",
-    "font": "^0.0.4",
-    "framer-motion": "^12.23.5",
-    "react": "^19.1.0",
-    "react-dom": "^19.1.0",
-    "react-icon": "^1.0.0",
+    "axios": "^1.8.4",
+    "firebase": "^11.6.1",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "react-hot-toast": "^2.5.2",
     "react-icons": "^5.5.0",
-    "swiper": "^11.2.10"
+    "react-redux": "^9.2.0",
+    "react-router-dom": "^7.5.1",
+    "redux": "^5.0.1",
+    "swiper": "^11.2.7",
+    "tailwindcss": "^4.1.4",
+    "uuid": "^11.1.0"
   },
   "devDependencies": {
     "@eslint/js": "^9.29.0",

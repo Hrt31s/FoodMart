@@ -17,7 +17,7 @@ export default function AdminLogin() {
 
     try {
       const { data } = await axios.post(
-        "/api/user/loginadmin",
+        "/api/admin/loginadmin",
         { email, password },
         {
           headers: {

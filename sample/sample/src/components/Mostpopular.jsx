@@ -15,7 +15,7 @@ export default function Mostpopular() {
   useEffect(() => {
     const fetchPopularProducts = async () => {
       try {
-        const res = await axios.get("/api/user/popular");
+        const res = await axios.get("/api/product/popular");
         setProducts(res.data?.data || []);
       } catch (error) {
         console.error("Failed to fetch products", error);
@@ -39,7 +39,7 @@ export default function Mostpopular() {
       const quantity = 1;
 
       await axios.post(
-        "/api/user/addtocart",
+        "/api/product/addtocart",
         { productId: product._id, quantity },
         {
           headers: {
@@ -75,7 +75,7 @@ export default function Mostpopular() {
     }, [cart, product]);
 
     const handleClick = (e) => {
-      e.preventDefault(); // Prevents navigation when clicking "Add to Cart"
+      e.preventDefault(); 
       if (!isAdded) {
         handleAddToCart(product);
         setIsAdded(true);

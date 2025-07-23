@@ -10,7 +10,7 @@ export default function Stats() {
   useEffect(() => {
     const fetchStats = async () => {
       try {
-        const response = await axios.get('/api/user/stats')
+        const response = await axios.get('/api/product/stats')
         setStats({
           users: response.data.totalUsers,
           products: response.data.totalProducts,

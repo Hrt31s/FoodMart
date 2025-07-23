@@ -10,7 +10,7 @@ const SearchResults = () => {
   useEffect(() => {
     const fetchResults = async () => {
       try {
-        const res = await axios.get(`/api/user/search?q=${encodeURIComponent(query)}`);
+        const res = await axios.get(`/api/product/search?q=${encodeURIComponent(query)}`);
         setResults(res.data.data || []);
       } catch (err) {
         console.error("Search failed:", err);
